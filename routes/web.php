@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('customers', 'customerController');
+
+Route::resource('customers', 'customerController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::resource('customers', 'customerController');
+
+Route::resource('orders', 'orderController');
