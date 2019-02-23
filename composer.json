@@ -17,7 +17,8 @@
         "symfony/expression-language": "^4.2",
         "infyomlabs/laravel-generator": "5.7.x-dev",
         "laravelcollective/html": "^5.7.0",
-        "infyomlabs/adminlte-templates": "5.7.x-dev"
+        "infyomlabs/adminlte-templates": "5.7.x-dev",
+        "bkwld/laravel-haml": "~2.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+		Bkwld\LaravelHaml\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
