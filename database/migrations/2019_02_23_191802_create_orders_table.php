@@ -17,6 +17,7 @@ class CreateordersTable extends Migration
             $table->increments('id');
             $table->string('customer_shopify_id');
             $table->string('plan_name');
+			$table->float('amount_paid', 8, 2);
             $table->timestamps();
             $table->softDeletes();
         });

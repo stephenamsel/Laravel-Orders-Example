@@ -13,7 +13,7 @@
             <div class="box-body">
                 <div class="row">
                     {!! Form::open(['route' => 'customers.store']) !!}
-
+						
                         @include('customers.fields')
 
                     {!! Form::close() !!}

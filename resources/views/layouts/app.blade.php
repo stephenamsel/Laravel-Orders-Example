@@ -2,10 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>InfyOm Generator</title>
+    <title>LifeDNA Test</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-
-    <!-- Bootstrap 3.3.7 -->
+	<!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Font Awesome -->
@@ -25,8 +24,11 @@
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
+	
+    <script src= 'js/app.js'></script>
     @yield('css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 </head>
 
 <body class="skin-blue sidebar-mini">
@@ -37,7 +39,7 @@
 
             <!-- Logo -->
             <a href="#" class="logo">
-                <b>InfyOm</b>
+                <b>Life DNA Coding Challenge</b>
             </a>
 
             <!-- Header Navbar -->
@@ -94,7 +96,7 @@
         <!-- Left side column. contains the logo and sidebar -->
         @include('layouts.sidebar')
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper content-container">
             @yield('content')
         </div>
 
@@ -120,7 +122,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                    InfyOm Generator
+                    LifeDNA Coding Challenge
                 </a>
             </div>
 
@@ -143,7 +145,7 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 content-container">
                     @yield('content')
                 </div>
             </div>
@@ -160,7 +162,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
-
     @yield('scripts')
+    
+    
 </body>
 </html>

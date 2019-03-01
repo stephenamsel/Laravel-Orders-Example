@@ -9,6 +9,9 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+ * 
+ * 
+ * NOT REQUIRING AUTHENTICATION FOR ANY ROUTES DURING LIFE DNA TEST!!!
 */
 
 Route::get('/', function () {
@@ -20,10 +23,10 @@ Route::resource('customers', 'customerController');
 
 Route::resource('customers', 'customerController');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index');
 
 Route::resource('customers', 'customerController');
 
 Route::resource('orders', 'orderController');
+
+Auth::routes(); // Unused for purposes of the test

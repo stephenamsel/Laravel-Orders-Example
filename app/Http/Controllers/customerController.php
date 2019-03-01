@@ -11,6 +11,10 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
+use App\Models\customer;
+use App\Models\order;
+
+
 class customerController extends AppBaseController
 {
     /** @var  customerRepository */
@@ -56,12 +60,26 @@ class customerController extends AppBaseController
     public function store(CreatecustomerRequest $request)
     {
         $input = $request->all();
-
-        $customer = $this->customerRepository->create($input);
-
-        Flash::success('Customer saved successfully.');
-
-        return redirect(route('customers.index'));
+		if(!(array_key_exists("has_dna", $input))) $input["has_dna"] = false;
+		$input["shopify_id"] = "DUMMY ID";
+		$input["stripe_id"] = "DUMMY ID";
+		$input["dna_file_path"] = "";
+				
+		if(Customer::where('email', '=', $input["email"])->count() == 0){
+			$customer = $this->customerRepository->create($input);
+			Flash::success('Customer saved successfully.');
+		} else {
+			$customer = Customer::where('email', '=', $input["email"])->first();
+			Flash::warning('Email Already Used');
+		}
+		
+        
+        $html = view('checkout')->with('customer', $customer);
+		$data = [
+        	'elem' => ".content-container", 
+        	'html' => $html
+    	];
+        return view('ajaxInsert')->with($data);
     }
 
     /**

@@ -20,13 +20,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class customer extends Model
 {
     use SoftDeletes;
-
     public $table = 'customers';
-    
-
     protected $dates = ['deleted_at'];
-
-
     public $fillable = [
         'name',
         'email',
@@ -59,6 +54,6 @@ class customer extends Model
         'name' => 'required',
         'email' => 'email'
     ];
-
-    
+	
+	  
 }

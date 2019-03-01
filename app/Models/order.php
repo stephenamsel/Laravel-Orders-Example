@@ -25,7 +25,8 @@ class order extends Model
 
     public $fillable = [
         'customer_shopify_id',
-        'plan_name'
+        'plan_name',
+        'amount_paid'
     ];
 
     /**
@@ -35,7 +36,8 @@ class order extends Model
      */
     protected $casts = [
         'customer_shopify_id' => 'string',
-        'plan_name' => 'string'
+        'plan_name' => 'string',
+        'amount_paid' => 'float',
     ];
 
     /**
@@ -44,7 +46,7 @@ class order extends Model
      * @var array
      */
     public static $rules = [
-        'plan_name' => 'amount_paid float text if'
+        'plan_name' => 'text if'
     ];
 
     
